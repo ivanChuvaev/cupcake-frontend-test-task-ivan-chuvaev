@@ -1,6 +1,11 @@
+import Router from "./Router"
+import MarketProvider from "./providers/MarketProvider"
+
 function App() {
   return (
-    <div>App</div>
+    <MarketProvider minDelay={1000}>
+      <Router />
+    </MarketProvider>
   )
 }
 
