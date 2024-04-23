@@ -1,0 +1,31 @@
+.CurrencyTable {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 0;
+  column-width: auto;
+
+  $cell-border: 1px solid black;
+
+  th:nth-child(1) {
+    width: 40%;
+  }
+
+  th {
+    background: #dddddd;
+  }
+
+  th, td {
+    padding: 10px;
+    border-right: $cell-border;
+    border-bottom: $cell-border;
+  }
+
+  th {
+    border-top: $cell-border;
+  }
+
+  th:first-child, td:first-child {
+    border-left: $cell-border;
+  }
+}

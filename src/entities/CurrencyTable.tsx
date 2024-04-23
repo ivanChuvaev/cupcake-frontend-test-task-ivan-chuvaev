@@ -1,15 +1,16 @@
 import { useMarketContext } from "../contexts/marketContext"
+import './CurrencyTable.scss';
 
 export default function CurrencyTable() {
   const { first, second, third } = useMarketContext();
   return (
-    <table>
+    <table className="CurrencyTable">
       <thead>
         <tr>
-          <td>Pair name/market</td>
-          <td>First</td>
-          <td>Second</td>
-          <td>Third</td>
+          <th>Pair name/market</th>
+          <th>First</th>
+          <th>Second</th>
+          <th>Third</th>
         </tr>
       </thead>
       <tbody>
