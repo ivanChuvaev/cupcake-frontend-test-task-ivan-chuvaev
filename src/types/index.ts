@@ -10,3 +10,10 @@ export type TMarketState = {
   timestamp: number
   date: string
 }
+
+export type TCurrencyTableRow = {
+  title: string;
+  first: { selected: boolean, value: string };
+  second: { selected: boolean, value: string };
+  third: { selected: boolean, value: string };
+};

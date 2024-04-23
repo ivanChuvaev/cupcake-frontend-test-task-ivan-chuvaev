@@ -25,6 +25,8 @@ export default function MarketProvider({
   const [second, setSecond] = useState<TMarketState | null>(null);
   const [third, setThird] = useState<TMarketState | null>(null);
 
+  const [isPolling, setIsPolling] = useState(false);
+
   const controllerRef = useRef(new AbortController());
   const minDelayRef = useRef(minDelay); // latest ref pattern
 
@@ -56,12 +58,14 @@ export default function MarketProvider({
   }, []);
 
   const start = useCallback(() => {
+    setIsPolling(true);
     poll(marketService.pollFirstMarketState, setFirst);
     poll(marketService.pollSecondMarketState, setSecond);
     poll(marketService.pollThirdMarketState, setThird);
   }, []);
 
   const stop = useCallback(() => {
+    setIsPolling(false);
     controllerRef.current.abort();
     controllerRef.current = new AbortController();
   }, []);
@@ -79,7 +83,7 @@ export default function MarketProvider({
   }, [minDelay]);
 
   return (
-    <marketContext.Provider value={{ first, second, third, start, stop }}>
+    <marketContext.Provider value={{ isPolling, first, second, third, start, stop }}>
       {children}
     </marketContext.Provider>
   );

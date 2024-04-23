@@ -5,6 +5,7 @@ type TContext = {
   first: TMarketState | null
   second: TMarketState | null
   third: TMarketState | null
+  isPolling: boolean
   start: () => void
   stop: () => void
 }

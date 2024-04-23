@@ -4,15 +4,14 @@ import UI from "../ui";
 import './Home.scss';
 
 export default function Home() {
-  const { start, stop } = useMarketContext();
+  const { start, stop, isPolling } = useMarketContext();
 
   return (
     <div className="Home">
       <CurrencyTable />
-      <div className="Home__buttons">
-        <UI.Button onClick={start}>start</UI.Button>
-        <UI.Button onClick={stop}>stop</UI.Button>
-      </div>
+      <UI.Button className="Home__polling-state-button" onClick={isPolling ? stop : start}>
+        {isPolling ? 'Stop' : 'Start'}
+      </UI.Button>
     </div>
   )
 }

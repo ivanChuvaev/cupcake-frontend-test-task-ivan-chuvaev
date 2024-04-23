@@ -11,6 +11,12 @@
     width: 40%;
   }
 
+  td[data-selected="true"] {
+    background: rgb(193, 238, 255);
+  }
+
+  // ------------ borders -------------
+
   th {
     background: #dddddd;
   }

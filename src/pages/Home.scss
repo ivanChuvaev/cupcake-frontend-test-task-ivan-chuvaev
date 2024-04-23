@@ -8,9 +8,7 @@
   margin: 0 auto;
 }
 
-.Home__buttons {
+.Home__polling-state-button {
+  float: right;
   margin-top: 10px;
-  display: flex;
-  gap: 10px;
-  justify-content: flex-end;
 }
